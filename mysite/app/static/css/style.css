@@ -24,14 +24,14 @@ main {
 }
 
 .nav-color:hover {
-    color: #EE6C4D;
+    color: #008080;
 }
 
 .nav-color:after {
     content: "";
     display: block;
     height: 2px;
-    background: #EE6C4D;
+    background: #008080;
     margin-top: 6px;
     opacity: 0;
     transform: translateY(12px);

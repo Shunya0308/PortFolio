@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-25bm*-j2tp$u)%ldl192v=gw_$bo*u9wo5t_%3-cr#n-s^=qyq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -133,9 +133,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # 本番用
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'tagushun7910@gmail.com'
-EMAIL_PORT = 587
-EMAIL_HAST_USER = 'tagushun7910@gmail.com'
-EMAIL_HAST_PASSWORD = 'xxx'
-EMAIL_USE_TLS = True
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_HOST = 'tagushun7910@gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'tagushun7910@gmail.com'
+#EMAIL_HOST_PASSWORD = 'xxx'
+#EMAIL_USE_TLS = True
