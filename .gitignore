@@ -1,4 +1,5 @@
 __pycache__
-ndb.sqlite3
+db.sqlite3
 .DS_Store
-local_settings.py
+mysite/local_settings.py
+staticfiles

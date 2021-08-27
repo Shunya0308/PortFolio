@@ -26,13 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['sushifolio.herokuapp.com']
 
 try:
     from .local_settings import *
 except ImportError:
     pass
 
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
 # Application definition
 
 INSTALLED_APPS = [
@@ -92,7 +95,9 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# 追記
+import dj_database_url
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 # Password validation
@@ -133,11 +138,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#追加
-if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    import django_heroku
-    django_heroku.settings(locals())
+
+# 追記
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
